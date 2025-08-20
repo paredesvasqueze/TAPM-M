@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+
+
+</head>
+<body>    
+    <label>Esperiencia Base</label>
+    <input type="text" id = "expienciabase" readonly="true">        
+    <br>
+    <label>Primera habilidad</label>
+    <input type="text" id = "habil" readonly="true">        
+    <br>
+
+<script>
+    fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    .then(res => res.json())
+    .then(data => 
+     {
+        console.log(data);
+       document.getElementById("expienciabase").value = data.base_experience; 
+       document.getElementById("habil").value = data.abilities[0].ability.name; 
+
+     }
+    );
+
+
+</script>
+</body>
+</html>
