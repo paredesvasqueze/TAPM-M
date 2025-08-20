@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nombre" >
+    <input type="number" id="horas">
+    <button id ="miboton" > calcular</button>
+    <input type="text" id="respuesta" >
+
+    <script>
+
+        const boton = document.getElementById("miboton")
+        boton.addEventListener("click",()=>{
+        let nombres = document.getElementById("nombre").value;
+        let oras = document.getElementById("horas").value;
+        let sueldo = 0;
+        if (oras < 8)
+        {
+        sueldo = 100;
+        }
+        else    
+        {
+        sueldo = 100 + (oras -8) *20;
+        }
+        document.getElementById("respuesta").value = "Sr " +nombres + " su sueldo es " + sueldo;    
+
+        })
+
+/*       function calcular()
+       {
+        let nombres = document.getElementById("nombre").value;
+        let oras = document.getElementById("horas").value;
+        let sueldo = 0;
+        if (oras < 8)
+        {
+        sueldo = 100;
+        }
+        else    
+        {
+        sueldo = 100 + (oras -8) *20;
+        }
+        document.getElementById("respuesta").value = "Sr " +nombres + " su sueldo es " + sueldo;    
+       } 
+    */
+    </script>
+
+</body>
+</html>
