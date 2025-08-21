@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>  
-
-
 </head>
 <body>    
     <label>Esperiencia Base</label>
     <input type="text" id = "expienciabase" readonly="true">        
     <br>
     <label>Primera habilidad</label>
-    <input type="text" id = "habil" readonly="true">        
+    <input type="text" id = "habil" readonly="true">            
     <br>
+    <label>Imagen</label>
+    <img id = "imagen" alt="imagenpokemon">            
+    <label>Animada</label>
+    <img id = "animada" alt="Animada">            
+
 
 <script>
-    fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    fetch("https://pokeapi.co/api/v2/pokemon/rayquaza")
     .then(res => res.json())
     .then(data => 
      {
-        console.log(data);
+       console.log(data);
        document.getElementById("expienciabase").value = data.base_experience; 
-       document.getElementById("habil").value = data.abilities[0].ability.name; 
-
+       document.getElementById("habil").value = data.abilities[0].ability.name;                      
+       document.getElementById("imagen").src = data.sprites.front_default;
+       document.getElementById("animada").src = data.sprites.other['showdown'].front_default;        
      }
     );
-
-
 </script>
 </body>
 </html>
